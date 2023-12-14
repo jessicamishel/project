@@ -6,7 +6,6 @@ package org.proyecto.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.annotation.processing.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -22,18 +21,19 @@ import javax.persistence.Table;
  * @author jmish
  */
 @Entity
-@Table(name="proyecto")
+@Table(name = "proyecto", schema = "public")
 public class Proyecto {
+
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String denominacion;
     private String detalleArrastre;
     private Date fechaInicio;
     private Date fechaFin;
     private String objetivo;
-    private String estado;
+    private Character estado;
     private BigDecimal costoProyecto;
     private String descripcionBreve;
     private String tipo;
@@ -43,13 +43,13 @@ public class Proyecto {
     private Date fechaModificacion;
     private String usuarioCreacion;
     private String usuarioModificacion;
-    @JoinColumn(name="responsable", referencedColumnName = "id")
+    @JoinColumn(name = "responsable", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.EAGER)
     private Persona responsable;
-    @JoinColumn(name="proceso", referencedColumnName = "id")
+    @JoinColumn(name = "proceso", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.EAGER)
     private Proceso proceso;
-    @JoinColumn(name="area", referencedColumnName = "id")
+    @JoinColumn(name = "area", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.EAGER)
     private Area area;
 
@@ -104,11 +104,11 @@ public class Proyecto {
         this.objetivo = objetivo;
     }
 
-    public String getEstado() {
+    public Character getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Character estado) {
         this.estado = estado;
     }
 
@@ -207,9 +207,5 @@ public class Proyecto {
     public void setArea(Area area) {
         this.area = area;
     }
-    
 
-    
-   
-    
 }

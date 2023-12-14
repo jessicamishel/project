@@ -12,13 +12,14 @@ import java.util.Date;
  * @author jmish
  */
 public class ProyectoDto {
+
     private Integer id;
     private String denominacion;
     private String detalleArrastre;
     private Date fechaInicio;
     private Date fechaFin;
     private String objetivo;
-    private String estado;
+    private Character estado;
     private BigDecimal costoProyecto;
     private String descripcionBreve;
     private String tipo;
@@ -83,11 +84,11 @@ public class ProyectoDto {
         this.objetivo = objetivo;
     }
 
-    public String getEstado() {
+    public Character getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Character estado) {
         this.estado = estado;
     }
 
@@ -178,7 +179,7 @@ public class ProyectoDto {
     public void setResponsable(PersonaDto responsable) {
         this.responsable = responsable;
     }
-    
+
     public ProcesoDto getProceso() {
         return proceso;
     }
@@ -186,7 +187,5 @@ public class ProyectoDto {
     public void setProceso(ProcesoDto proceso) {
         this.proceso = proceso;
     }
-    
-    
-    
+
 }

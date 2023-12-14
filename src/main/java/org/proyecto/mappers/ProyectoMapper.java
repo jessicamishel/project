@@ -13,14 +13,14 @@ import org.proyecto.entity.Proyecto;
  *
  * @author jmish
  */
-@Mapper (componentModel = "spring", uses={AreaMapper.class,PersonaMapper.class,ProcesoMapper.class})
+@Mapper(componentModel = "spring", uses = {AreaMapper.class, PersonaMapper.class, ProcesoMapper.class})
 public interface ProyectoMapper {
-    
-    ProyectoDto toDto (Proyecto proyecto);
-    
-    Proyecto toEntity (ProyectoDto dto);
-    
-    List<ProyectoDto> toDto (List<Proyecto> proyectos);
-    
-    List<Proyecto> toEntity (List<ProyectoDto> proyectos);
+
+    ProyectoDto toDto(Proyecto proyecto);
+
+    Proyecto toEntity(ProyectoDto dto);
+
+    List<ProyectoDto> toDto(List<Proyecto> proyectos);
+
+    List<Proyecto> toEntity(List<ProyectoDto> proyectos);
 }

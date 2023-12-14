@@ -20,15 +20,17 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class ProyectoResource {
+
     @Autowired
     private ProyectoService service;
-    
-    @RequestMapping(value="consultarProyecto",method = RequestMethod.GET)
-    public ResponseEntity<?> consultarProyecto(){
+
+    @RequestMapping(value = "consultarProyecto", method = RequestMethod.GET)
+    public ResponseEntity<?> consultarProyecto() {
         return new ResponseEntity<>(service.consultarProyecto(), HttpStatus.OK);
     }
-    @RequestMapping(value ="guardarProyecto", method = RequestMethod.POST)
-    public ResponseEntity<?> guardarProyecto(@RequestBody ProyectoDto dto){
+
+    @RequestMapping(value = "guardarProyecto", method = RequestMethod.POST)
+    public ResponseEntity<?> guardarProyecto(@RequestBody ProyectoDto dto) {
         return new ResponseEntity<>(service.guardarProyecto(dto), HttpStatus.OK);
     }
 }

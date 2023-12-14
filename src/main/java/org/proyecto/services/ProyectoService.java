@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ProyectoService {
+
     @Autowired
     private ProyectoRepository repository;
     @Autowired
@@ -27,7 +28,8 @@ public class ProyectoService {
         List<Proyecto> proyecto = repository.findAll();
         return mapper.toDto(proyecto);
     }
-    public ProyectoDto guardarProyecto(ProyectoDto dto){
+
+    public ProyectoDto guardarProyecto(ProyectoDto dto) {
         Proyecto proyecto = mapper.toEntity(dto);
         proyecto = repository.save(proyecto);
         return mapper.toDto(proyecto);
